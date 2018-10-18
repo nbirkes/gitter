@@ -4,9 +4,9 @@ for dir in ~/vix/*/
 do
   cd ${dir}
   branch=$(git branch)
-  if [[ $branch = *"* master"* ]]; then
+  if [[ ${branch} = *"* master"* ]]; then
     status=$(git status)
-    if [[ $status = *"nothing to commit"* ]]; then
+    if [[ ${status} = *"nothing to commit"* ]]; then
       echo "DO PULL ~ $dir"
       git pull
     else
@@ -17,4 +17,3 @@ do
   fi
   cd ..
 done
-
