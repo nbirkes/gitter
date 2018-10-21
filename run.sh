@@ -1,5 +1,9 @@
 #!/bin/bash
 
+token=$(cat ~/.github_token)
+curl -Is -H "Authorization: token ${token}" https://api.github.com/orgs/VeracityInnovations/repos | grep "^Link"
+curl -s -H "Authorization: token ${token}" https://api.github.com/orgs/VeracityInnovations/repos | jq '.[].name'
+
 for dir in ~/vix/*/
 do
   cd ${dir}
