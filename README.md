@@ -1,3 +1,3 @@
-#Gitter
+#gitter
 
-
+./gitter.sh
